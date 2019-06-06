@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Nelson Bighetti
+name: Sébastien Salva
 
 # Username (this should match the folder name)
 authors:
@@ -10,50 +10,53 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: (Full) Professor
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: I.U.T. Computer science dept. University Clermont Auvergne
+  url: "https://www.iut-clermont.fr/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio:
+(Full) Professor at the University of Auvergne, France, and a fellow of the LIMOS laboratory, team DIS. Co-responsible of the team DIS of LIMOS (https://limos.fr/themes/3). Responsible of the degree Licence Professionnelle MI: Applications Web.
 
 interests:
+- Software Engineering
+- Testing (passive, active)
+- Security testing
+- Model inference
 - Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
+  - course: HDR (Habilitation à diriger des Recherches)
+    institution: University of Auvergne (UDA)
     year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: PhD in Software Engineering
+    institution: University of Reims
+    year: 2002
+  - course: MEng (DEA)
+    institution: Versailles University
+    year: 1999
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
-- icon: envelope
-  icon_pack: fas
-  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+#- icon: envelope
+#  icon_pack: fas
+#  link: '#contact'  # For a direct email link, use "mailto:test@example.org".
+#- icon: twitter
+#  icon_pack: fab
+#  link: https://twitter.com/GeorgeCushen
+#- icon: google-scholar
+#  icon_pack: ai
+#  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/sasa27
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.  
 # - icon: cv
@@ -61,15 +64,12 @@ social:
 #   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
-  
+email: "sebastien.salva@uca.fr"
+
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.  
 user_groups:
-- Researchers
-- Visitors
+#- Researchers
+#- Visitors
 ---
-
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+Sebastien Salva is a (Full) Professor at the University of Auvergne, France, and a fellow of the LIMOS laboratory, team DIS. He received the HDR (Habilitation à diriger des recherches) in may 2012 from the University of Auvergne and the Ph.D. degree in computer science from the Reims University, France, in 2001. His research interests include Model inference, Model Based Testing applied to different kinds of systems (timed, distributed, service oriented, etc.) by means of various testing approaches (conformance testing, passive testing, robustness, security, etc.). He is  co-responsible of the team DIS of LIMOS (https://limos.fr/themes/3).
