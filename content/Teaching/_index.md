@@ -104,7 +104,9 @@ DESS: objet and system programming
 
 #### DUT 2A PHP7
 1. {{% staticref "files/php1.pdf" "newtab" %}}PHP1{{% /staticref %}}
-
 2. {{% staticref "files/php2.pdf" "newtab" %}}PHP2{{% /staticref %}}
 3. {{% staticref "files/php3.pdf" "newtab" %}}PHP3{{% /staticref %}}
 
+>Video:<br>
+1. <iframe src='https://mc01.dsi.uca.fr/videos/?video=MEDIA181108180857649' width='480' height='270'  frameborder='0' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen='true' webkitallowfullscreen='true' mozallowfullscreen='true' ></iframe><br>
+2. <iframe src='https://mc01.dsi.uca.fr/videos/?video=MEDIA181120162604386' width='480' height='270'  frameborder='0' scrolling='no' marginwidth='0' marginheight='0' allowfullscreen='true' webkitallowfullscreen='true' mozallowfullscreen='true' ></iframe>

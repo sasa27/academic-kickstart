@@ -10,4 +10,3 @@ publication: "*Thirteenth International Conference on Software Engineering Advan
 tags: ["Security pattern ; Security Testing ; Attack Defense Tree ; Test Case Generation"]
 url_pdf: "https://hal.archives-ouvertes.fr/hal-01868218"
 ---
-

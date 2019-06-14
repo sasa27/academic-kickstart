@@ -1,5 +1,5 @@
 ---
-title: "Une démarche pour l?assistance à l'utilisation des patrons de sécurité"
+title: "Une démarche pour l'assistance à l'utilisation des patrons de sécurité"
 date: 2015-06-01
 publishDate: 2019-06-05T19:37:36.189498Z
 authors: ["Loukmen Regainia", "Cédric Bouhours", "Sébastien Salva"]

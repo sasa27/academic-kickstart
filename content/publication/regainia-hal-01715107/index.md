@@ -6,7 +6,7 @@ authors: ["Loukmen Regainia", "Sébastien Salva"]
 publication_types: ["1"]
 abstract: ""
 featured: false
-publication: "*3nd International Conference on Information Systems Security and Privacy (ICISSP 2017*"
+publication: "*3nd International Conference on Information Systems Security and Privacy (ICISSP 2017)*"
 tags: ["Security patterns ; Classification ; CAPEC attacks ; CWE weaknesses ; Attack-Defense Trees"]
 url_pdf: "https://hal-clermont-univ.archives-ouvertes.fr/hal-01715107"
 ---
