@@ -41,3 +41,7 @@ slides: ""
 ---
 Model inference and testing of Legacy applications
 Supervisor of the PHD student William Durand.
+
+Purposes: Model learning of legacy apps used to control industrial systems, Regression testing, Test generation to check whether a new system is compliant with the older one
+
+{{% staticref "files/fm15-slides.pdf" "newtab" %}}Presentation at FME'15{{% /staticref %}}

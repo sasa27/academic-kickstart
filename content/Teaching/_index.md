@@ -23,11 +23,11 @@ subtitle = ""
 
   # Background color.
   # color = "navy"
-  
+
   # Background gradient.
   gradient_start = "DarkGreen"
   gradient_end = "ForestGreen"
-  
+
   # Background image.
   # image = "image.jpg"  # Name of image in `static/img/`.
   # image_darken = 0.6  # Darken the image? Range 0-1 where 0 is transparent and 1 is opaque.
@@ -40,41 +40,42 @@ subtitle = ""
   padding = ["20px", "0", "20px", "0"]
 
 [advanced]
- # Custom CSS. 
+ # Custom CSS.
  css_style = ""
- 
+
  # CSS class.
  css_class = ""
 +++
 
 I am manager of the degree "Licence Professionnelle MI Applications Web" ([link here](https://www.uca.fr/formation/nos-formations/catalogue-des-formations/licence-professionnelle-metiers-de-l-informatique-applications-web-10134.kjsp?RH=1476342991145))
 
-[Some courses and video in french below](## Courses)
-
+[Some courses and video in french below](#courses)
+<br><br>
 
 #### 2002 - 2019 IUT d'Aubière (Auvergne University)
 
-DUT: Network protocols(Ethernet, IP, TCP/UDP, ...) and web programming (PHP, servlet, JSP, design pattern).
+DUT courses: Network protocols(Ethernet, IP, TCP/UDP, ...) and Web programming (PHP7, servlet, JSP, design pattern in Web).
 
- 
+
 | Courses           | Hours                          |
 | ------------------| ------------------------------ |
 | `Protocols (OSI, Ethernet, IP, routage, TCP, NAT,...) 1ère année DUT`          | 15H CM, 28H TD, 28HTP            |
 | `Protocols/Web advanced, 2eme annee DUT (Wifi, xDSL,`<br>`prog. Socket, Servlet, JSP, design pattern MVC, BDO, injection SQL)`  | 28H CM, 56H TP            |
-| `Prog. Web 2ème année DUT (PHP, app architecture and`<br>`design with some patterns: MVC, strategy, singleton, etc.)` | 6H CM, 12H TD, 14H TP |
-	
-#### 2006 - 2019 Licence professionnelle: 
+| `Prog. Web 2ème année DUT (PHP, app architecture and`<br>`design with some patterns: MVC, strategy, singleton, etc.)` | 6H CM, 12H TD, 56H TP |
 
-Network protocols, introduction to parallel programming (OPENMP), 
-web services & Cloud computing, Software quality(CMMI model, UML, tests,...), system admin, SUN certification.
+#### 2006 - 2019 Licence professionnelle MI Web Applications
+
+Courses in Network protocols, introduction to parallel programming (OPENMP),
+Web services, Cloud computing, Software quality(soft. Eng., CMMI model, UML, tests, etc.), system admin, SUN certification.
 
 | Courses           | Hours                          |
 | ------------------| ------------------------------ |
 | `Network protocols (lower layers, Wifi, Ethernet, SDH/SONET,etc.`| 10H CM, 10H TD |
-| `Software quality (CMMI model, life cycle, tests,`<br>`Junit, Selenium, Mobile testing, etc.)` | 20H CM/TD |
-| `Soap Web services programming (Axis2, BPEL)`| 20H CM/TP |
-| `Cloud programming (IaaS, PaaS, SaaS), Google AppEngine,`<br>`Windows Azure, Heroku, Restful Web service programming`<br>`(jersey, php slim, etc.)` | 25H CM/TP |	
-| `Parallel programming ( Thread, language OPENMP,`<br> `memory shared programming with multicores, etc.)`| 16H CM, 10H TP |
+| `Software quality (CMMI model, life cycle, tests,`<br>`Junit, Selenium, Mobile testing, etc.)` | 20H CM/TD/TP |
+| `Soap Web services programming (Axis2, JAXWS, BPEL, )`| 20H CM/TP |
+| `Cloud programming (IaaS, PaaS, SaaS), Google AppEngine,`<br>`Windows Azure, Heroku, Restful Web service programming`<br>`(jersey, php slim, etc.)` | 25H CM/TP |
+| `Parallel programming ( Thread, OPENMP language,`<br> `memory shared programming with multicores, etc.)`| 16H CM, 10H TP |
+| `System ( Process, Thread, Java parallel prog.`| 16H CM, 8H TP |
 | `SUN certification (JAVA, level Programmer and plus)`| 10H TD |
 
 
@@ -86,7 +87,7 @@ Web service, Model based Testing (20h)
 Licence d'informatique: Protocols, computer architecture, web programming(PHP), Objet programming(C++), FDT
 
 DESS: objet and system programming
-
+<br><br>
 ## Courses
 
 #### Master GLIA Cloud and testing

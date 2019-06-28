@@ -3,9 +3,9 @@
 
 title: "VASOC (Vers l'Audit de Sécurité de Objets Connectés / Security Audit of IOTs)"
 
-summary: ""
+summary: "IOT System Audit"
 authors: [Sébastien Salva, Lillian Bossuet]
-tags: []
+tags: [IOT, Model learning]
 categories: []
 date: 2019-06-06T17:32:09+02:00
 
@@ -40,11 +40,8 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: ""
 ---
-VASOC (017 January-  2020 June) Responsible: S. Salva
-The project aims to educate and raise awareness among developers and industrials on the security of IOTs. 
+VASOC (017 January-  2020 June) Coordinator: S. Salva
 
-The project will bring solutions to the realisation of a strict security audit process allowing to evaluate IOTs under development or existing IOTs. 
+Purposes: The project aims to educate and raise awareness among developers and industrials on the security of IOTs. The project will bring solutions to the realisation of a strict security audit process allowing to evaluate IOTs under development or existing IOTs. The project will provide tools (model learning, testing tools) in this purpose. It will also facilitate the emergence of a team of industrials and researchers experts in this topic in the French region Auvergne Rhone-Alpes.
 
-The project will provide tools (model learning, testing tools) in this purpose. It will also facilitate the emergence of a team of industrials and researchers experts in this topic in the French region Auvergne Rhone-Alpes. 
-
-[https://vasoc.limos.fr/](https://vasoc.limos.fr/)
+[Project Web site](https://vasoc.limos.fr/)
