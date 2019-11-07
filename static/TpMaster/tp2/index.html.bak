@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4//FR">
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title></title>
+    <meta name="Author" content="">
+  </head>
+  <body> <b>TP Web Service</b><br>
+    S. Salva<br>
+    <br>
+    <div align="center">
+      <table border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td valign="top">
+              <h1 align="center"><font color="#800040">Heroku, services Web
+                  Jersey<br>
+                </font></h1>
+              <font color="#800040"> </font></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><font color="#990000"><br>
+      </font></p>
+    <h2><font color="#990000">1. Prérequis</font></h2>
+    <p>Installer le toolset Heroku (fait normalement), sous linux: wget -qO-
+      https://toolbelt.heroku.com/install-ubuntu.sh | sh <br>
+    </p>
+    <p>Installer Maven et Git (fait normalement)</p>
+    <p>La doc: le cours, <big><big><big><big><a href="https://devcenter.heroku.com/articles/getting-started-with-java">doc
+java
+                Heroku</a>, <a href="https://jersey.github.io/documentation/latest/getting-started.html#heroku-webapp">doc
+                Jersey</a> </big></big></big></big><br>
+    </p>
+    <p>un compte gratuit <a href="https://id.heroku.com/login">Heroku !!!!</a></p>
+    <br>
+    <p> </p>
+    <h2><font color="#990000"> 2. Création d'un SW et déploiement sur Heroku </font></h2>
+    <font color="#990000"> A <font color="#000040"><br>
+        <br>
+        Préparez un projet avec Maven<br>
+        <br>
+        <pre>mvn archetype:generate -DarchetypeArtifactId=jersey-heroku-webapp \<br>                -DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false \<br>                -DgroupId=**a changer** -DartifactId=**a changer** -Dpackage=**a changer** \<br>                -DarchetypeVersion=2.26</pre>
+        <br>
+        Vous trouverez le code source dans <span style="font-style: italic;">src/main/java</span>
+        et les tests dans <span style="font-style: italic;">src/test/java<br>
+        </span></font></font>De base, vous trouverez une classe Myressource
+    contenant un service et un test pour ce service<br>
+    <br>
+    <font color="#990000"><font color="#000040"><font color="#990000">B <br>
+          <br>
+        </font></font></font>Créez un service Web simple qui prends un parametre
+    via URL et qui retourne un affiche HTML<br>
+    <br>
+    <font color="#990000"><font color="#000040"><font color="#990000">C</font></font></font><br>
+    <br>
+    Modifiez votre test pour qu'il soit adapté à votre service (sinon le package
+    ne se fera pas)<br>
+    <br>
+    En gros, vos tests se font comme suit:<br>
+    <br>
+    <span style="font-style: italic;">final String responseMsg =
+      target().path("wsrest/appel").request().get(String.class);</span><br style="font-style: italic;">
+    <br style="font-style: italic;">
+    <span style="font-style: italic;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      assertEquals("Hello, Heroku!", responseMsg);</span><br>
+    <br>
+    target() donne un objet Webtarget qui peut être appelé avec une méthode HTTP<br>
+    Un Webtarget possède aussi une méthode <span style="font-style: italic;">queryParam(String
+      name, Object... values)</span><br style="font-style: italic;">
+    <br>
+    voir ici: <a href="https://jersey.github.io/documentation/latest/test-framework.html">doc
+      jersey</a>, <a href="https://jersey.github.io/apidocs/2.26/jersey/org/glassfish/jersey/test/JerseyTest.html">doc
+classe
+      JerseyTest</a>, <a href="https://jersey.github.io/apidocs/2.26/jersey/org/glassfish/jersey/test/JerseyTest.html#target--">doc
+WebTarget
+      </a><br>
+    <h2><font color="#990000"><font color="#000040"><font color="#990000"><font
+              color="#000040"><font
+                color="#990000">3.
+                Vérification en local<br>
+              </font></font></font></font></font></h2>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040">
+          </font></font></font></font> <br>
+    Créez un package de votre application.<br>
+    Testez votre application en local avec Jetty (serveur Web légé pour
+    applications Web servlet, WS, etc.) en faisant:<br>
+    <ol>
+      <li>mvn clean package jetty:run <br>
+      </li>
+      <li>ou&nbsp; java -jar jetty-runner.jar application.war</li>
+    </ol>
+    Appelez votre service via un navigateur http://localhost:8080/<br>
+    <br>
+    <h2><font color="#990000"><font color="#000040"><font color="#990000"><font
+              color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#990000">4.
+                      Déploiement sur Heroku<br>
+                    </font></font></font></font></font></font></font></font></h2>
+    <font color="#990000"> A<br>
+      <br>
+    </font><font color="#990000"><font color="#000040"><font color="#990000"><font
+            color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040">Les
+                    étapes sont les suivantes (voir doc)<br>
+                  </font></font></font></font></font></font></font></font>
+    <ol>
+      <li>creation d'un repo git local sur projet (git init)</li>
+      <li>création d'une appli sur héroku (heroku create -&gt; demande
+        login/mdp)</li>
+      <li>création package git local (git add et git commit)</li>
+      <li>envoi du dépot sur Héroku (git push: git push heroku master -&gt;
+        envoi et compilation sur heroku)</li>
+      <li>à la fin du push, Vous trouverez un lien <br>
+        https://**nom appli**.herokuapp.com/ <br>
+      </li>
+    </ol>
+    Déployez votre application et appelez là sur Héroku.<br>
+    <br>
+    <font color="#990000"><font color="#000040"><font color="#990000">B</font></font></font><br>
+    <br>
+    Vérifiez que vous avez un dyno fonctionnel (et un seul) avec les commandes <span
+      style="font-style: italic;">heroku
+      ps</span> et <span style="font-style: italic;">heroku ps:scale web=1<br>
+      <span style="font-style: italic;"><br>
+      </span></span>Vérifiez ce qui a été fait en regardant vos logs (si vous
+    avez des erreurs aussi !) avec <span style="font-style: italic;">heroku
+      logs --tail</span><br>
+    <span style="font-style: italic;"><span style="font-style: italic;"><span style="font-style: italic;"></span></span></span><span
+      style="font-style: italic;"><span
+        style="font-style: italic;"><span
+          style="font-style: italic;"></span><br>
+      </span></span><font color="#990000"><font color="#000040"><font color="#990000">C</font></font></font><br>
+    Regardez votre interface Web d'administration (retrouvez l'appli et&nbsp;
+    ses&nbsp; statistiques, vous etes toujours en mode gratuit ?) <span style="font-style: italic;"><span
+        style="font-style: italic;"><br>
+      </span></span>
+    <h2><font color="#990000"><font color="#000040"><font color="#990000"><font
+              color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#990000">5.
+                            Utilisation d'une base de donnée <br>
+                          </font></font></font></font></font></font></font></font></font></font></font></h2>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040">
+                      </font></font></font></font></font></font></font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><a
+                              href="https://devcenter.heroku.com/articles/getting-started-with-java#use-a-database">Documentation</a><br>
+                          </font></font></font></font></font></font></font></font></font></font></font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000">
+                              A <font color="#000040"><br>
+                              </font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    Vérifiez si PostgreSQL est installé en tant que module (il est gratuit,
+    attention les autres souvent non)<br>
+    Vous pouvez trouver des détails sur votre Bd dans votre console d'admin
+    (contenu, suppresion) et avec la commande <span style="font-style: italic;">heroku
+      pg</span><br>
+    <br>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040"><font
+                          color="#000040"><font
+                            color="#990000"><font
+                              color="#000040"><font
+                                color="#990000">B
+                                <font color="#000040"><br>
+                                </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><br>
+    Reprenez le code donné en exemple dans la documentation ci dessus.<br>
+    <br>
+    Créer une méthode de service qui ajoute des éléments dans une table (ticks
+    en exemple)<br>
+    <br>
+    Puis créez une seconde méthode pour lister le contenu de la table.<br>
+    <br>
+    Pour que votre code soit déployable, il faut suivre ces étapes:<br>
+    <ol>
+      <li>ajouter les imports dans le code</li>
+      <li>modifier pom.xml section dependencies et ajouter la dépendance liée à
+        Postgresql</li>
+    </ol>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &lt;dependency&gt; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &lt;groupId&gt;org.postgresql/groupId&gt; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &lt;artifactId&gt;postgresql&lt;/artifactId&gt; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; &lt;version&gt;9.4.1208&lt;/version&gt; <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+    &lt;/dependency&gt;<br>
+    <br>
+    <ol start="3">
+      <li>ajouter les dépendances: mvn clean install<br>
+      </li>
+    </ol>
+    <br>
+    Pour déployer, il faut aussi refaire: <br>
+    <ol>
+      <li>git add puis git commit (ou git -a commit, c'est pareil)</li>
+      <li>git push<br>
+      </li>
+    </ol>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040"><font
+                          color="#000040"><font
+                            color="#990000"><font
+                              color="#000040"><font
+                                color="#990000">C</font></font></font></font></font></font></font></font></font></font></font></font></font></font><br>
+    <br>
+    Pour vérifier le contenu de votre base distante, vous pouvez utiliser votre
+    console d'administration ou faire la commande <span style="font-style: italic;">heroku
+      pg:psql</span> (\q pour quitter)<br>
+    <br>
+    <h2><font color="#990000"><font color="#000040"><font color="#990000"><font
+              color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#990000">
+                                      6. Composition de services</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></h2>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040"><font
+                          color="#000040"><font
+                            color="#990000"><font
+                              color="#000040"><font
+                                color="#990000"><font
+                                  color="#000040">
+                                </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#000040"><br>
+                                      <font color="#990000"> <font color="#000040">Créez
+                                          un service composite à partir de 2 Web
+                                          services déployés sur Héroku (votre
+                                          compte et /ou celui d'un de vos
+                                          collègues). <br>
+                                        </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#000040"><font
+                                        color="#990000"><font
+                                          color="#000040">Testez
+                                          via le navigateur, puis en créant un
+                                          client.</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+  </body>
+</html>

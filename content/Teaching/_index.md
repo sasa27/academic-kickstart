@@ -97,6 +97,10 @@ DESS: objet and system programming
 
 3. {{% staticref "files/master3.pdf" "newtab" %}}Cloud Testing{{% /staticref %}}
 
+* {{% staticref "TpMaster/tp1/" "newtab" %}}TP1{{% /staticref %}}
+ {{% staticref "TpMaster/tp2/" "newtab" %}}TP2{{% /staticref %}}
+ {{% staticref "TpMaster/tp3/" "newtab" %}}TP3{{% /staticref %}}
+
 #### Licence Pro Software Engineering
 * {{% staticref "files/soft.pdf" "newtab" %}}Soft. Eng.{{% /staticref %}}
 

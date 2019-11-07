@@ -10,22 +10,22 @@
 
 [[main]]
   name = "Research"
-  url = "/Research"
+  url = "research/"
   weight = 5
 
 [[main]]
   name = "Tools"
-  url = "/Tools"
+  url = "tools/"
   weight = 10
 
 [[main]]
     name = "Publications"
-    url = "/publication"
+    url = "publication/"
     weight = 20
 
 [[main]]
   name = "Teaching"
-  url = "/Teaching"
+  url = "teaching/"
   weight = 25
 
 [[main]]

@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4//FR">
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title></title>
+    <meta name="Author" content="">
+  </head>
+  <body> <b>TP Web Service</b><br>
+    S. Salva<br>
+    <br>
+    <div align="center">
+      <table border="1" cellpadding="2" cellspacing="2">
+        <tbody>
+          <tr>
+            <td valign="top">
+              <h1 align="center"><font color="#800040">Restful Web service,
+                  Jersey</font></h1>
+              <font color="#800040"> </font></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><font color="#990000"><br>
+      </font></p>
+    <h2><font color="#990000">1. API nécessaires<br>
+      </font></h2>
+    <p> Netbeans&nbsp; (serveur d'application glassfish inclu)<br>
+      Vous pouvez optez pour le serveur Tomcat <br>
+      La librairie Jersey 2 est incluse<br>
+    </p>
+    <h2><font color="#990000"> 2. Création d'un SW REst simple </font></h2>
+    <font color="#990000"> A <font color="#000040"><br>
+      </font></font>
+    <p><font color="#990000"><font color="#000040">Dans Netbeans, créez un
+          projet <span style="font-style: italic;">Java Web / Web Application</span></font></font></p>
+    <p><font color="#990000"><font color="#000040"> Créez un Service Web Rest
+          CRUD permettant de gérer des livres (fictifs ici) et retournant de
+          simples chaines HTML suivant l'appel. Vous pouvez par exemple gérer
+          une ArrayList de Livres.</font></font></p>
+    <p>Rapppel:</p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <th>Method </th>
+          <th>Description </th>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td valign="top"><code>GET</code> </td>
+          <td valign="top">Demande d'une représentation d'une ressource</td>
+        </tr>
+        <tr>
+          <td valign="top"><code>PUT</code> </td>
+          <td valign="top">Crée ou met à jour une ressource with une
+            représentation fournie</td>
+        </tr>
+        <tr>
+          <td valign="top"><code>DELETE</code> </td>
+          <td valign="top">Supprime la resource spécifiée </td>
+        </tr>
+        <tr>
+          <td valign="top"><code>POST</code> </td>
+          <td valign="top">Envoie de données à être traitées par la ressource
+            donnée</td>
+        </tr>
+        <tr>
+          <td valign="top"><code>OPTIONS</code> </td>
+          <td valign="top">Returns the methods supported by the identified
+            resource </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <font color="#990000"><font color="#000040"><font color="#990000">B <font color="#000040"><br>
+          </font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040">Créez
+              le Client associé: ajouter un nouveau projet <span style="font-style: italic;">Java
+                / Java Application</span></font></font></font></font></p>
+    <p> </p>
+    <p>Vous pouvez tenter la génération d'un client : sous Netbeans, sur le
+      projet en cours, faites click droit et New Restful Java Client. Cela
+      génere une classe à instancier/appeler dans une méthode Main (à faire).</p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><br>
+            </font></font></font></font></p>
+    <h2><font color="#990000"><font color="#000040"><font color="#990000"><font
+              color="#000040"><font
+                color="#990000">
+                3. Services Web REST, HATEOAS</font></font></font></font></font></h2>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040">
+          </font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040">HATEOAS
+(Hypermedia
+                as the Engine of Application State), est une contrainte faisant
+                partie intégrante de REst initialement. Cette contrainte stipule
+                qu'un client peut communiquer avec un service REst sans avoir de
+                connaissances préalables sur le service. Le service doit donc
+                fournir tous les détails pour être appelé dynamiquement.</font></font></font></font></font></p>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000">
+                A <font color="#000040"><br>
+                </font></font></font></font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040">Via
+                    un retour HTML composé de liens (<a href="http://restcookbook.com/Basics/hateoas/">exemple</a>),
+modifiez
+                    la méthode précédente d'ajout de livres pour la rendre
+                    compatible HATEOAS. Par exemple, losrque vous avez ajouté un
+                    livre, le retour montre que vous pouvez mettre à jour la
+                    base de livres, les supprimer, etc.</font></font></font></font></font></font></font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><br>
+                  </font></font></font></font></font></font></font></p>
+    <h2><font color="#990000">4. Manipulation de ressources spécialisées</font><br>
+    </h2>
+    <p><font color="#990000"> A </font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040">
+                                Créez un second projet Web Application.</font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040">Développez
+toujours
+                                un service Web REst pour manipulation de livres,
+                                mais cette fois en créant une ressource
+                                spécialisées appelée Book. Il vous faut donc un
+                                nouveau POJO Book, oui.</font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040">
+                                Les appels doivent être de type application/xml</font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040"><font
+                          color="#000040"><font
+                            color="#990000"><font
+                              color="#000040"><font
+                                color="#990000">
+                                B <font color="#000040"><br>
+                                </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040">Créez
+                                    un second Client pour ce deuxiéme service</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040">
+                                    Vous pouvez tenter une génération de code
+                                    mais... ca ne marchera probablement pas, ou
+                                    du moins ce sera incomplet</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <h2><font color="#990000"><font color="#000040"><font color="#990000"><font
+              color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#990000">
+                                      5. Composition de services</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font><br>
+    </h2>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040"><font
+                          color="#000040"><font
+                            color="#990000"><font
+                              color="#000040"><font
+                                color="#990000"><font
+                                  color="#000040">
+                                </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#000040"><font
+                                        color="#990000">
+                                        A <font color="#000040"><br>
+                                        </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#000040"><font
+                                        color="#990000"><font
+                                          color="#000040">Modifiez
+le
+                                          premier service en ajoutant une
+                                          méthode pour que ce dernier appelle le
+                                          deuxième service et retourne un chaine
+                                          (@produces de type text/html).
+                                          (Reprenez le code du client précédent
+                                          !)</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040"><font
+                          color="#000040"><font
+                            color="#990000"><font
+                              color="#000040"><font
+                                color="#990000"><font
+                                  color="#000040"><font
+                                    color="#000040"><font
+                                      color="#990000"><font
+                                        color="#000040">
+                                      </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+    <p><font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#000040"><font
+                                        color="#990000"><font
+                                          color="#000040">Testez
+                                          via le navigateur ou en créant un
+                                          client</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+    <h2><font color="#990000"><font color="#000040"><font color="#990000"><font
+              color="#000040"><font
+                color="#000040"><font
+                  color="#990000"><font
+                    color="#000040"><font
+                      color="#000040"><font
+                        color="#990000"><font
+                          color="#000040"><font
+                            color="#000040"><font
+                              color="#990000"><font
+                                color="#000040"><font
+                                  color="#990000"><font
+                                    color="#000040"><font
+                                      color="#000040"><font
+                                        color="#990000"><font
+                                          color="#000040"><font
+                                            color="#990000">
+                                            6. Simulation d'un Service Web
+                                            persistant en Rest (si temps
+                                            disponible)<br>
+                                          </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></h2>
+    <font color="#990000"><font color="#000040"><font color="#990000"><font color="#000040"><font
+              color="#000040"><font
+                color="#990000"><font
+                  color="#000040"><font
+                    color="#000040"><font
+                      color="#990000"><font
+                        color="#000040"><font
+                          color="#000040"><font
+                            color="#990000"><font
+                              color="#000040"><font
+                                color="#990000"><font
+                                  color="#000040"><font
+                                    color="#000040"><font
+                                      color="#990000"><font
+                                        color="#000040">
+                                      </font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+    <p>Reprenons la question 2.<br>
+      On souhaite créer une méthode qui prend en paramètre un livre. L'opération
+      ajoute ce livre à une liste et retourne la liste.<br>
+    </p>
+    <p><font color="#990000"> A <br>
+      </font></p>
+    <p>Quelles sont les solutions possibles? (au moins 2)</p>
+    <p><font color="#990000"> B <br>
+      </font></p>
+    <p>Implantez la solution la plus rapide.</p>
+  </body>
+</html>
